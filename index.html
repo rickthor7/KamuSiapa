@@ -1,0 +1,64 @@
+
+<html>
+<meta charset='UTF-8' /><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' /><meta content='IE=edge' http-equiv='X-UA-Compatible' />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://serius.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" /><script src="https://serius.likeadream.repl.co/script.js"></script>
+<head>
+
+</head>
+<body><div id="bodyblur"><img src="https://i.postimg.cc/L80w44cV/61f1385043f04.jpg" width="100%" height="100%" /></div></div>
+<div class="foto">
+<div class="image"><img id="ftKm" style="opacity:0;" src="https://i.postimg.cc/x84HQVBc/alone-lonely.gif" width="130px" height="130px" /><img id="ftAk" style="opacity:0;position:absolute;" src="https://i.postimg.cc/x84HQVBc/alone-lonely.gif" width="130px" height="130px" /></div>
+<span id="sp1"></span>
+<div id="sp2" style="display:none;"><span id="text3"></span></div>
+<div id="sp3" style="display:none;"><span id="text4"></span></div>
+</div>
+<div id='Content' style="display:none">
+<blockquote><p id="text"></p><p id="text2"></p>
+</div>
+<div id="tombo" class="content2">
+<div id="lopdeg" class="ct1"><label class='lovein' onClick="mulai();nonTo()">&#10084;&#65039;</label></div>
+<p style="opacity:.7;font-size:12px;color:white">Klik untuk Mulai</p>
+</div>
+
+<a id="whs" class='button' onClick="would()">Next</a>
+</div>
+<script type="text/javascript">
+            document.getElementById("sp1").innerHTML = "Hi &#9829;"
+            const swals = Swal.mixin({
+                allowOutsideClick: false,
+            });
+            const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,});
+            const swalst = Swal.mixin({
+                allowOutsideClick: false, showConfirmButton: false, timer: 2000, timerProgressBar: true,
+            });
+            async function mulai(){
+                var { value: nama } = await swals.fire({
+                    title: 'Masukin nama kamu',
+                    input: 'text',
+                    allowOutsideClick: false,
+                    showCancelButton: false,
+                });
+                if(nama && nama.length < 8){
+                	window.nama = nama;
+                    kuis();                  
+                    document.getElementById("sp1").innerHTML = nama + " &#128155;";                    
+                } else {
+                    await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 7 karakter, ya!');
+                    mulai();
+                }
+            }
+            async function kuis(){
+                           var { value: persen } = await swals.fire({
+                            title: 'Seberapa kenal ' + nama + ' sama Aku?',
+                            input: 'range', inputLabel: 'Antara 60-100% ya', inputAttributes: {min: 60, max: 100,},
+                            allowOutsideClick: false, inputValue: 60
+                        });
+                        if(persen){
+                        	text = "Dear, " + nama + ". haloo orang kepo,mau tau ya nama ku siapa :)            ";
+                        	text2 = "E R I K G A N Z";
+                            ketik();showDiv();
+                    }}
+</script>
+</body>
+</html>
